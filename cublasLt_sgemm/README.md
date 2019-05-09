@@ -1,6 +1,4 @@
-# cublasLt_examples
-Complete examples of the cublasLt libraries. More information can be found in Section 3 of the CUBLAS programming guide.
-<https://docs.nvidia.com/cuda/pdf/CUBLAS_Library.pdf> or <https://docs.nvidia.com/cuda/cublas/index.html>
+# cublasLt_sgemm
 
 Matrix multiplication of SGEMM
 
