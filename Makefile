@@ -3,7 +3,7 @@ CFLAGS	:=--cudart=static -ccbin g++ -O3 -std=c++11
 
 INC_DIR	:=-I/usr/local/cuda/samples/common/inc
 LIB_DIR	:=
-LIBS	:=-lcublas -lcublasLt
+LIBS	:=-lcublasLt
 
 INT8_ARCH :=-gencode arch=compute_72,code=\"compute_72,sm_72\" \
 	-gencode arch=compute_75,code=\"compute_75,sm_75\"
