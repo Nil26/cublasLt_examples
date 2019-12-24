@@ -1,7 +1,4 @@
 # Getting Started
-CUDA toolkit with symbolic link to the CUDA directory ```/usr/local/cuda.```.
-
-## Built With
 These examples utilize the following toolsets:
 * cuBLASLt
 * Thrust
