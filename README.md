@@ -1,6 +1,6 @@
 # Getting Started
 These examples utilize the following toolsets:
-* cuBLASLt
+* cuBLASLt (Requires CUDA Toolkit 10.1+)
 * Thrust
 * C++11
 
