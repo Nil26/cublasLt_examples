@@ -1,5 +1,5 @@
-NVCC	:=nvcc
-CFLAGS	:=--cudart=static -ccbin g++ -O3 -std=c++11
+NVCC	:=nvcc --cudart=static -ccbin g++ 
+CFLAGS	:=-O3 -std=c++11
 
 INC_DIR	:=-I/usr/local/cuda/samples/common/inc
 LIB_DIR	:=
