@@ -194,7 +194,7 @@ void LtSgemm( cublasLtHandle_t  ltHandle,
 void calculate( int const &m, int const &n, int const &k ) {
 
     float alpha = 1.0f, beta = 0.0f;
-    int   lda = m, ldb = k, ldc = m;
+    int   lda = k, ldb = n, ldc = n;
     void *d_workspace = nullptr;
 
     size_t sizeA         = m * k;
@@ -218,10 +218,10 @@ void calculate( int const &m, int const &n, int const &k ) {
     printf( "cublasLt %dx%dx%d test running..\n", m, n, k );
 
     /* Allocate host memory for the matrices */
-    thrust::host_vector<float> h_A( sizeA, 0 );
-    thrust::host_vector<float> h_B( sizeB, 0 );
-    thrust::host_vector<float> h_C( sizeC, 0 );
-    thrust::host_vector<float> h_C_ref( sizeC, 0 );
+    thrust::host_vector<float> h_A( sizeA, 0.0f );
+    thrust::host_vector<float> h_B( sizeB, 0.0f );
+    thrust::host_vector<float> h_C( sizeC, 0.0f );
+    thrust::host_vector<float> h_C_ref( sizeC, 0.0f );
 
     /* Fill the matrices with test data */
     /* Assume square matrices */
@@ -233,7 +233,7 @@ void calculate( int const &m, int const &n, int const &k ) {
     /* Allocate device memory for the matrices */
     thrust::device_vector<float> d_A( h_A );
     thrust::device_vector<float> d_B( h_B );
-    thrust::device_vector<float> d_C( sizeC, 0 );
+    thrust::device_vector<float> d_C( sizeC, 0.0f );
 
     /* Retrieve raw pointer for device data */
     float *d_A_ptr = thrust::raw_pointer_cast( &d_A[0] );
